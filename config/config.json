@@ -1,0 +1,18 @@
+{
+  "development": {
+    "username": "dbb",
+    "password": null,
+    "database": "cuedUp-dev",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "dbb",
+    "password": null,
+    "database": "cuedUp-test",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  }
+}
