@@ -2,7 +2,6 @@ const { Quote } = require('../models/quote');
 
 module.exports = {
   create: (req, res) => {
-    console.log(Quote);
     return Quote.create({
       body: req.body.title,
       authorId: req.body.authorId,

@@ -19,6 +19,6 @@ module.exports = (sequelize, DataTypes) => {
       as: 'quoteContributor',
     });
   };
-
+  console.log(Quote);
   return Quote;
 };
