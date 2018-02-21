@@ -10,6 +10,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// adds routes to app
+require('./server/routes')(app);
+
 app.get('*', (req, res) => res.status(200).send({ message: 'welcome to cuedUp' }));
 
 module.exports = app;

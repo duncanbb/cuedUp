@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-  }, {});
+  });
   Quote.associate = (models) => {
     Quote.belongsTo(models.contributor, {
       foreignKey: 'contributorId',
