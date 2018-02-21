@@ -1,11 +1,20 @@
 module.exports = (sequelize, DataTypes) => {
   const Contributor = sequelize.define('Contributor', {
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   }, {});
+
   Contributor.associate = (models) => {
-    Contributor.hasMany(models.)
-    // associations can be defined here
+    Contributor.hasMany(models.Quote, {
+      foreignKey: 'contributorId',
+      as: 'quotes',
+    });
   };
   return Contributor;
 };

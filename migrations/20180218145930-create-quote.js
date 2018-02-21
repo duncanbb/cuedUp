@@ -8,7 +8,16 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       body: {
+        allowNull: false,
         type: Sequelize.STRING,
+      },
+      contributorId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+      },
+      authorId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
@@ -19,7 +28,7 @@ module.exports = {
         type: Sequelize.DATE,
       },
     })),
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Quotes');
-  },
+  down: (queryInterface, Sequelize) => (
+    queryInterface.dropTable('Quotes')
+  ),
 };

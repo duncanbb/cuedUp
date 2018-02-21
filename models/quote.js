@@ -1,13 +1,24 @@
 module.exports = (sequelize, DataTypes) => {
   const Quote = sequelize.define('Quote', {
-    author: DataTypes.STRING,
-    authorId: DataTypes.INTEGER,
-    body: DataTypes.STRING,
-    contributorId: DataTypes.INTEGER,
+    authorId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    body: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    contributorId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   }, {});
   Quote.associate = (models) => {
-    console.log(models);
-    // associations can be defined here
+    Quote.belongsTo(models.contributor, {
+      foreignKey: 'contributorId',
+      as: 'quoteContributor',
+    });
   };
+
   return Quote;
 };

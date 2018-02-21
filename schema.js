@@ -7,6 +7,7 @@ const quote = {
   contributorId: INTEGER,
   authorId: INTEGER,
   id: INTEGER,
+  // also has many quote followers through quote follows
 };
 
 const user = {
